@@ -1,0 +1,29 @@
+﻿@model Memberships.Entities.Part
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Part</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@ @*cambiamos por el edit partial button*@
+    @Html.Partial("_EditButtonPartial",Model.Id)
+    @*@Html.ActionLink("Back to List", "Index")*@  @*cambiamos por el partial view*@
+    @Html.Partial("_BackToListButtonPartial")
+
+</p>
